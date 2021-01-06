@@ -1,0 +1,73 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
+
+$primary-color-dark: #689f38;
+$primary-color: #8bc34a;
+$primary-color-light: #dcedc8;
+$primary-color-text: #212121;
+$divider-color: #bdbdbd;
+
+
+form {
+  width: 80%;
+  margin: 8px 0;
+
+  .field {
+    width: 100%;
+    padding: 8px 0;
+
+    label {
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid $divider-color;
+      border-radius: 4px;
+      padding: 8px;
+      background-color: $primary-color-light;
+    }
+
+    input[type="checkbox"] {
+      width: 5%;
+    }
+  }
+}
+
+.left-part {
+  background-color: #213246;
+  height: 100vh;
+}
+
+.right-part {
+  background-color: gray;
+}
+
+.mid-part {
+  background-color: #51a2e1;
+  height: 40px;
+}
+
+.following {
+  color: white;
+}
+
+.follower {
+  color: white;
+}
+
+.d {
+  display: flex;
+  justify-content: space-between;
+}
+
+.color {
+  color: white;
+}
+
