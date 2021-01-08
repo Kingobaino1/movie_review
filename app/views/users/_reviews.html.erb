@@ -1,0 +1,40 @@
+<div class="col-md-8 reviews follow color">
+  REVIEWS
+<div class="row">
+  <aside class="col-md-12">
+    <section class="opinions_form">
+     <%= render 'shared/review_form' %>
+    </section>
+  </aside>
+  <aside class="col-md-12">
+    <section class="reviews">
+      <%= @opinions.count %> New Reviews
+      <div class="card">
+        <ol class="list-group list-group-flush">
+          <% @opinions.each do |opinion| %>
+          <li class="list-group-item d">
+          <div>
+             <% if opinion.image.attached? %>
+              <%= image_tag opinion.image, class: 'image' %>
+             <% end %>
+          </div>
+          <div class="d f_dir_col review_content">
+          <div class="name">
+            <%= opinion.user.full_name %>
+          </div>
+          <div>
+            <%= opinion.content %>
+          </div>
+          <div>
+            Posted <%= time_ago_in_words(opinion.created_at) %> ago.
+          </div>
+          </div>
+          </li>
+          <% end %>
+        </ol>
+      </div>
+    </section>
+  </aside>
+</div>
+
+</div>

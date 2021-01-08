@@ -45,29 +45,61 @@ form {
   height: 100vh;
 }
 
-.right-part {
-  background-color: gray;
-}
-
 .mid-part {
   background-color: #51a2e1;
   height: 40px;
 }
 
-.following {
+.f-count {
   color: white;
+  padding: 0 0 2px 15px;
 }
-
-.follower {
-  color: white;
-}
-
 .d {
   display: flex;
+}
+
+.s_btw {
   justify-content: space-between;
 }
 
 .color {
-  color: white;
+  color: gray;
 }
 
+.home {
+  margin-top: 7rem;
+}
+
+.fas {
+  margin-right: 5px;
+}
+
+.follow {
+  font-weight: bold;
+}
+
+.reviews,
+.who_to_follow {
+  margin-top: 30px;
+}
+
+.who_to_follow {
+  border-left: 1px solid gray;
+}
+
+.image {
+  height: 55px;
+}
+
+.f_dir_col {
+  flex-direction: column;
+}
+
+.review_content {
+  padding-left: 10px;
+}
+
+.name {
+  color: black;
+  font-weight: bolder;
+}

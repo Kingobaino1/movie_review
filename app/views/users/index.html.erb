@@ -1,31 +1,21 @@
 <div class="container">
-<div class="row w-25 mx-auto">
-<div class="col-md-3 left-part d-flex">
-  <div>
-  <div class="d">
-    <div class="f-1 d-flex">
-      <div class="following ml-3">128</div>
-      <div class="following">Following</div>
+  <div class="row w-25 mx-auto">
+    <div class="col-md-3 left-part">
+      <%= render 'user_side'%>
     </div>
-    <div class="f-1 d-flex">
-      <div class="following ml-3">128</div>
-      <div class="follower">Followers</div>
+    <div class="col-md-9 mid-part">
+      <div class="d">
+        <div class="tweet">
+          <i class="fab fa-twitter color"></i>
+        </div>
+        <div>
+          <%= link_to 'Logout', :destroy_user_session, method: :delete %>
+        </div>
+      </div>
+      <div class="row">
+        <%= render 'reviews'%>
+        <%= render 'who_to_follow'%>
+      </div>
     </div>
   </div>
-  </div>
-  <div class="mt-4">
-    <i class="fas fa-home color">Home</i>
-  </div>
-  <div>
-    <i class="fas fa-user-alt">Profile</i>
-  </div>
-</div>
-<div class="col-md-9 mid-part">
-  <div class="d">
-  <div class="tweet">
-    <i class="fab fa-twitter color"></i>
-  </div>
-  <%= link_to 'Logout', :destroy_user_session, method: :delete %>
-</div>
-</div>
 </div>

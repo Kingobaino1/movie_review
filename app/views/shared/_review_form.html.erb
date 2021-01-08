@@ -1,0 +1,7 @@
+<%= form_with(model: @opinion, local: true) do |f| %>
+<div class="field">
+<%= f.text_area :content, placeholder: "Write a review...", class: 'color' %>
+</div>
+<%= f.file_field :image%>
+<%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
