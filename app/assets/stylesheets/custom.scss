@@ -67,7 +67,7 @@ form {
 }
 
 .home {
-  margin-top: 7rem;
+  margin-top: 3rem;
 }
 
 .fas {
@@ -88,7 +88,8 @@ form {
 }
 
 .image {
-  height: 55px;
+  height: 200px;
+  width: 200px;
 }
 
 .f_dir_col {
@@ -102,4 +103,30 @@ form {
 .name {
   color: black;
   font-weight: bolder;
+}
+
+li {
+  list-style: none;
+}
+
+.image_follow {
+  height: 40px;
+  border-radius: 50%;
+}
+
+.color_gold {
+  color: gold;
+}
+
+.p {
+  padding-top: 15px;
+}
+
+.p_image {
+  height: 40px;
+  width: 40px;
+}
+
+.m {
+  margin-top: 10px;
 }

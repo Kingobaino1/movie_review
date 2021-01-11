@@ -1,7 +1,22 @@
-<%= form_with(model: @opinion, local: true) do |f| %>
-<div class="field">
-<%= f.text_area :content, placeholder: "Write a review...", class: 'color' %>
+<div class="card">
+  <div class="card-body">
+    <%= form_with(model: @opinion, local: true) do |f| %>
+    <div class="field">
+    <%= f.text_field :title, placeholder: "Add movie title", class: 'color' %>
+    </div>
+    <div class="field">
+    <%= f.text_area :content, placeholder: "Write a review...", class: 'color' %>
+    </div>
+    <div class="field">
+    <%= f.number_field :rating, max: 5, min: 1, placeholder: "Rating(1-5)", class: 'color' %>
+    </div>
+    <div class="field">
+    <%= f.select :genre, options_for_select([['Action','Action'],['Adventure','Adventure'],['Comedy', 'Comedy']]) %>
+    </div>
+    <div class="field">
+    <%= f.file_field :image%>
+    </div>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
-<%= f.file_field :image%>
-<%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>

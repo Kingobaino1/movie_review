@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :opinions
+  has_many :opinions, dependent: :destroy
   has_many_attached :images
   has_many :active_followings, foreign_key: 'follower_id',
                                class_name: 'Following',
@@ -13,4 +13,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  validates :images, content_type: { in: %w[image/jpeg image/png image/png],
+                                    message: 'Must be a valid image format' },
+                    size: { less_than: 6.megabytes,
+                            message: 'Should not exceed 5MB' }
 end

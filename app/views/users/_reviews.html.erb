@@ -10,22 +10,44 @@
     <section class="reviews">
       <%= @opinions.count %> New Reviews
       <div class="card">
-        <ol class="list-group list-group-flush">
+        <ol class="list-group list-group-flush p">
           <% @opinions.each do |opinion| %>
           <li class="list-group-item d">
-          <div>
-             <% if opinion.image.attached? %>
-              <%= image_tag opinion.image, class: 'image' %>
-             <% end %>
+          <div class="d f_dir_col">
+            <div class="name">
+            <%= opinion.title%>
+            </div>
+            <div>
+            <% if opinion.image.attached? %>
+             <%= image_tag opinion.image, class: 'image' %>
+            <% end %>
+            </div>
+            <div class="name">
+              Genre:<%= opinion.genre %>
+            </div>
           </div>
-          <div class="d f_dir_col review_content">
+          <div class="d f_dir_col review_content p">
           <div class="name">
-            <%= opinion.user.full_name %>
+           <% if opinion.user != nil%>
+            Reviewed by: <%= opinion.user.full_name %>
+            <% end %>
+          </div>
+          <div class="name">
+            Rating:
+            <% opinion.rating.to_i.times do  %>
+            <span class="glyphicon glyphicon-star color_gold"></span>
+            <% end %>
+            <% opinion.blank_stars.times do %>
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <% end %>
+          </div>
+          <div class="name">
+          Review:
           </div>
           <div>
             <%= opinion.content %>
           </div>
-          <div>
+          <div class="name">
             Posted <%= time_ago_in_words(opinion.created_at) %> ago.
           </div>
           </div>
