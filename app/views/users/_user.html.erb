@@ -1,12 +1,12 @@
 <li class="m name">
   <% if user != current_user %>
-  <div class="d-flex">
+  <div class="d">
   <% if user.images.attached? %>
     <%= image_tag user.images[0], class: 'image_follow' %>
   <% end %>
   <div class="d f_dir_col review_content">
     <%= user.full_name%><br>
-    <%= link_to 'See profile', '#'%>
+    <%= link_to 'See profile', '#', class: 'font-weight-light'%>
   </div>
   </div>
   <%end%>

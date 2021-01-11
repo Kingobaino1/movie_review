@@ -1,6 +1,7 @@
 <div class="card">
   <div class="card-body">
     <%= form_with(model: @opinion, local: true) do |f| %>
+     <%= render 'shared/error_messages'%>
     <div class="field">
     <%= f.text_field :title, placeholder: "Add movie title", class: 'color' %>
     </div>
@@ -11,6 +12,7 @@
     <%= f.number_field :rating, max: 5, min: 1, placeholder: "Rating(1-5)", class: 'color' %>
     </div>
     <div class="field">
+    <%= f.label :genre%><br>
     <%= f.select :genre, options_for_select([['Action','Action'],['Adventure','Adventure'],['Comedy', 'Comedy']]) %>
     </div>
     <div class="field">

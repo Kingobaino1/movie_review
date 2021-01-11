@@ -14,7 +14,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :images, content_type: { in: %w[image/jpeg image/png image/png],
-                                    message: 'Must be a valid image format' },
-                    size: { less_than: 6.megabytes,
-                            message: 'Should not exceed 5MB' }
+                                     message: 'Must be a valid image format' },
+                     size: { less_than: 6.megabytes,
+                             message: 'Should not exceed 5MB' }
 end

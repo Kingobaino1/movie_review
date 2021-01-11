@@ -1,2 +1,136 @@
 @import "~bootstrap/scss/bootstrap";
 @import '@fortawesome/fontawesome-free';
+
+
+$primary-color-dark: #689f38;
+$primary-color: #8bc34a;
+$primary-color-light: #dcedc8;
+$primary-color-text: #212121;
+$divider-color: #bdbdbd;
+
+
+form {
+  width: 80%;
+  margin: 8px 0;
+
+  .field {
+    width: 100%;
+    padding: 8px 0;
+
+    label {
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      // border: 1px solid $divider-color;
+      border-radius: 4px;
+      padding: 8px;
+      background-color: $primary-color-light;
+    }
+
+    input[type="checkbox"] {
+      width: 5%;
+    }
+  }
+}
+
+.left-part {
+  background-color: #213246;
+  height: 100vh;
+}
+
+.mid-part {
+  background-color: #51a2e1;
+  height: 40px;
+}
+
+.f-count {
+  color: white;
+  padding: 0 0 2px 15px;
+}
+.d {
+  display: flex;
+}
+
+.s_btw {
+  justify-content: space-between;
+}
+
+.color {
+  color: gray;
+}
+
+.home {
+  margin-top: 3rem;
+}
+
+.fas {
+  margin-right: 5px;
+}
+
+.follow {
+  font-weight: bold;
+}
+
+.reviews,
+.who_to_follow {
+  margin-top: 30px;
+}
+
+.who_to_follow {
+  border-left: 1px solid gray;
+}
+
+.image {
+  height: 200px;
+  width: 200px;
+}
+
+.f_dir_col {
+  flex-direction: column;
+}
+
+.review_content {
+  padding-left: 10px;
+}
+
+.name {
+  color: black;
+  font-weight: bolder;
+}
+
+li {
+  list-style: none;
+}
+
+.image_follow {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.color_gold {
+  color: gold;
+}
+
+.p {
+  padding-top: 15px;
+}
+
+.p_image {
+  height: 40px;
+  width: 40px;
+}
+
+.m {
+  margin-top: 10px;
+}
+
+.error_explanation {
+color: red;
+ul {
+color: red;
+margin: 0 0 30px 0;
+}
+}
