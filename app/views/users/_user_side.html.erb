@@ -1,24 +1,24 @@
 <div class="color">
-  <% if @user.images.attached? %>
-    <%= image_tag @user.images[0], class: 'p_image m' %>
+  <% if current_user.images.present? %>
+    <%= image_tag current_user.images[0], class: 'p_image m' %>
   <% end %>
-  <%= @user.full_name%>
+  <%= current_user.full_name%>
   </div>
   <div class="d home s_btw">
     <div class="f-1 d f_dir_col">
-      <div class="f-count">128</div>
+      <div class="f-count"><%= current_user.following.count%></div>
       <div class="follow color">Following</div>
     </div>
     <div class="f-1 d f_dir_col">
-      <div class="f-count">128</div>
+      <div class="f-count"><%= current_user.followers.count%></div>
       <div class="follow color">Followers</div>
     </div>
   </div>
   <div class="home">
     <i class="fas fa-home color"></i>
-    <span class="color"><%= link_to 'Home', root_path, color: 'color'%> </span>
+    <span class="color"><%= link_to 'Home', root_path, class: 'color'%> </span>
   </div>
   <div class="home">
     <i class="fas fa-user-alt color"></i>
-    <span class="color">Profile</span>
+    <span class="color"><%= link_to 'Profile', user_path(current_user), class: 'color'%> </span>
   </div>

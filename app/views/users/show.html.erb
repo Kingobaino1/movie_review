@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 left-part">
+      <%= render 'user_side'%>
+    </div>
+    <div class="col-md-9 mid-part">
+      <div class="d s_btw">
+        <div class="tweet">
+          <i class="fab fa-twitter color"></i>
+        </div>
+        <div>
+          <%= link_to 'Logout', :destroy_user_session, method: :delete %>
+        </div>
+      </div>
+      <div class="row">
+        <%= render 'background_image'%>
+        <%= render 'user_show'%>
+      </div>
+    </div>
+  </div>
+</div>

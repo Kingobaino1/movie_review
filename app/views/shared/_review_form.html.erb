@@ -1,4 +1,7 @@
 <div class="card">
+  <div class="card-title pl-3">
+    Reviews
+  </div>
   <div class="card-body">
     <%= form_with(model: @opinion, local: true) do |f| %>
      <%= render 'shared/error_messages'%>
@@ -13,7 +16,9 @@
     </div>
     <div class="field">
     <%= f.label :genre%><br>
-    <%= f.select :genre, options_for_select([['Action','Action'],['Adventure','Adventure'],['Comedy', 'Comedy']]) %>
+    <%= f.select :genre, options_for_select([['Action','Action'],
+                                             ['Adventure','Adventure'],
+                                             ['Comedy', 'Comedy']]) %>
     </div>
     <div class="field">
     <%= f.file_field :image%>

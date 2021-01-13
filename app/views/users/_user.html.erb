@@ -1,13 +1,16 @@
 <li class="m name">
+  <%# <% if !@current_user.following?(user) %> 
   <% if user != current_user %>
-  <div class="d">
+  <div class="d-flex">
+  <div>
   <% if user.images.attached? %>
     <%= image_tag user.images[0], class: 'image_follow' %>
   <% end %>
-  <div class="d f_dir_col review_content">
-    <%= user.full_name%><br>
-    <%= link_to 'See profile', '#', class: 'font-weight-light'%>
+  </div>
+  <div class="">
+    <%= link_to "#{user.full_name}", user_path(user), class: 'review_content name font-weight-light'%>
   </div>
   </div>
   <%end%>
+  <%# <% end %> 
   </li>

@@ -1,0 +1,15 @@
+<div class="col-md-4 mt-2">
+  <div class="w-50 mx-auto d-flex f_dir_col">
+    <div class="mx-auto mt-4">
+      <% if @user.images.present? %>
+        <%= image_tag @user.images[0], class: 'show_image' %>
+      <% end %>
+    </div>
+    <div class="mx-auto">
+      <%= @user.full_name %>
+    </div>
+     <div class="mx-auto">
+      <%= render 'shared/follow_form'%>
+    </div>
+  <div>
+</div>
