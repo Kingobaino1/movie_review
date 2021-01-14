@@ -1,7 +1,18 @@
-<div class="col-md-6 col-md-offset-3">
+<div class="row">
+  <div class="col-md-3 left-part h1"></div>
+  <div class="col-md-9 mid-part login">
+    <div class="d s_btw">
+      <div class="tweet">
+        <h4 class="p-2"> KI </h4>
+      </div>
+      <div class="p-2">
+        <%= link_to 'Log in', user_session_path, class: 'color' %>
+      </div>
+    </div>
+<div class="col-md-12">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  
+  <div class>
    <div class="field">
     <%= f.label :full_name %><br />
     <%= f.text_field :full_name, autofocus: true, autocomplete: "full-name" %>
@@ -45,5 +56,6 @@
   </div>
 <% end %>
 </div>
-<%= render "devise/shared/links" %>
+</div>
+</div>
 
