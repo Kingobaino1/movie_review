@@ -1,24 +1,26 @@
 <div class="color">
-  <% if current_user.images.present? %>
-    <%= image_tag current_user.images[0], class: 'p_image m' %>
+  <% if current_user.photo.present?%>
+    <%= image_tag current_user.photo, class: 'p_image m' %>
+  <% else %>
+    <%= link_to image_tag('profile_image', alt: 'Profile_picture', class: 'p_image m') %>
   <% end %>
   <%= current_user.full_name%>
+</div>
+<div class="d home s_btw">
+  <div class="f-1 d f_dir_col">
+    <div class="f-count"><%= current_user.following.count%></div>
+    <div class="follow color">Following</div>
   </div>
-  <div class="d home s_btw">
-    <div class="f-1 d f_dir_col">
-      <div class="f-count"><%= current_user.following.count%></div>
-      <div class="follow color">Following</div>
-    </div>
-    <div class="f-1 d f_dir_col">
-      <div class="f-count"><%= current_user.followers.count%></div>
-      <div class="follow color">Followers</div>
-    </div>
+  <div class="f-1 d f_dir_col">
+    <div class="f-count"><%= current_user.followers.count%></div>
+    <div class="follow color">Followers</div>
   </div>
-  <div class="home">
-    <i class="fas fa-home color"></i>
-    <span class="color"><%= link_to 'Home', root_path, class: 'color'%> </span>
-  </div>
-  <div class="home">
-    <i class="fas fa-user-alt color"></i>
-    <span class="color"><%= link_to 'Profile', user_path(current_user), class: 'color'%> </span>
-  </div>
+</div>
+<div class="home">
+  <i class="fas fa-home color"></i>
+  <span class="color"><%= link_to 'Home', root_path, class: 'color'%> </span>
+</div>
+<div class="home">
+  <i class="fas fa-user-alt color"></i>
+  <span class="color"><%= link_to 'Profile', user_path(current_user), class: 'color'%> </span>
+</div>

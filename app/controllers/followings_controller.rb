@@ -2,20 +2,22 @@ class FollowingsController < ApplicationController
   def create
     @follow = current_user.active_followings.build(follows_params)
     if @follow.save
-      flash[:success] = 'You have started following this user!'
-      redirect_to root_path
+      @user = User.find(params[:followed_id])
+      redirect_to user_path(@user)
     else
-      flash[:alert] = 'Your review was not submited'
-    end
-
-    def destroy
-      @unfollows = Following.find_by(followed_id: @user.id).destroy
+      flash[:alert] = 'You are not following this user'
     end
   end
 
-private
+  def destroy
+    @user = User.find(params[:id])
+    @unfollows = current_user.following.delete(@user)
+    redirect_to user_path(@user.id)
+  end
 
-def follows_params
-  params.permit(:followed_id)
-end
+  private
+
+  def follows_params
+    params.permit(:followed_id)
+  end
 end

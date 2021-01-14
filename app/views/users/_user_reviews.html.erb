@@ -1,16 +1,14 @@
-<div class="col-md-8 reviews follow color">
 <div class="row">
   <aside class="col-md-12">
     <section class="opinions_form">
-     <%= render 'shared/review_form' %>
     </section>
   </aside>
   <aside class="col-md-12">
     <section class="reviews">
-      <%= pluralize(@opinions.count, 'New Review') %> 
+      <%= pluralize(@user.opinions.count, 'Review') %> 
       <div class="card">
         <ol class="list-group list-group-flush p">
-          <% @opinions.each do |opinion| %>
+          <% @user.opinions.each do |opinion| %>
           <li class="list-group-item d">
           <div class="d f_dir_col">
             <div class="name">
@@ -19,8 +17,6 @@
             <div>
             <% if opinion.image.attached? %>
              <%= image_tag opinion.image, class: 'image' %>
-             <% else %>
-               <%= link_to image_tag('movie.jpg', alt: 'Profile_picture', class: 'image') %>
             <% end %>
             </div>
             <div class="name">
@@ -58,6 +54,4 @@
       </div>
     </section>
   </aside>
-</div>
-
 </div>

@@ -37,7 +37,7 @@ form {
 
 .left-part {
   background-color: #213246;
-  height: 100vh;
+  height: 150vh;
 }
 
 .mid-part {
@@ -136,11 +136,18 @@ margin: 0 0 30px 0;
 }
 
 .b_image {
-  height: 150px;
+  height: 350px;
 }
 
 .show_image {
   height: 70px;
   width: 70px;
   border-radius: 50%;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  align-self: end;
 }

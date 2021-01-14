@@ -1,0 +1,23 @@
+<div class="border p-3">
+  <h6 class="color">FOLLOWED BY</h6>
+  <ul class="mt-3 p-0">
+    <% @user.followers.each do |follower| %>
+      <% if follower != current_user%>
+        <li class="mt-2">
+          <div class="d-flex">
+          <div>
+          <% if follower.photo.present? %>
+            <%= image_tag follower.photo, class: 'image_follow' %>
+          <% else %>
+            <%= link_to image_tag('profile_image', alt: 'Profile_picture', class: 'image_follow') %>
+          <% end %>
+          </div>
+          <div class="pl-2 d-flex f_dir_col">
+            <div><%= follower.full_name%></div>
+            <div class="mx-auto color">@<%= follower.user_name%><div>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

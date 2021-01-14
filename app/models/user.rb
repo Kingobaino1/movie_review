@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :opinions, dependent: :destroy
-  has_many_attached :images
+  has_one_attached :photo
+  has_one_attached :cover_image
   has_many :active_followings, foreign_key: 'follower_id',
                                class_name: 'Following',
                                dependent: :destroy
@@ -13,10 +14,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :images, content_type: { in: %w[image/jpeg image/png image/png],
-                                     message: 'Must be a valid image format' },
-                     size: { less_than: 6.megabytes,
-                             message: 'Should not exceed 5MB' }
+  validates :photo, :cover_image, content_type: { in: %w[image/jpeg image/png image/png],
+                                                  message: 'Must be a valid image format' },
+                                  size: { less_than: 6.megabytes,
+                                          message: 'Should not exceed 5MB' }
 
   def follow(other_user)
     user.following.push(other_user)
