@@ -4,21 +4,25 @@
   </div>
   <div class="card-body">
     <%= form_with(model: @opinion, local: true) do |f| %>
-     <%= render 'shared/error_messages'%>
     <div class="field">
-    <%= f.text_field :title, placeholder: "Add movie title", class: 'color' %>
+    <%= f.text_field :title, placeholder: "Add movie title *", class: 'color' %>
     </div>
     <div class="field">
-    <%= f.text_area :content, placeholder: "Write a review...", class: 'color' %>
+    <%= f.text_area :content, placeholder: "Write a review... *", class: 'color' %>
     </div>
     <div class="field">
-    <%= f.number_field :rating, max: 5, min: 1, placeholder: "Rating(1-5)", class: 'color' %>
+    <%= f.number_field :rating, max: 5, min: 1, placeholder: "Rating(1-5) *", class: 'color' %>
     </div>
     <div class="field">
-    <%= f.label :genre%><br>
+    <%= f.label :genre%> <span class="text-danger">*</span><br>
     <%= f.select :genre, options_for_select([['Action','Action'],
                                              ['Adventure','Adventure'],
-                                             ['Comedy', 'Comedy']]) %>
+                                             ['Comedy', 'Comedy'],
+                                             ['Horror', 'Horror'],
+                                             ['Romance', 'Romance'],
+                                             ['Horror', 'Horror'],
+                                             ['Animation', 'Animation'],
+                                             ['Others', 'Others']]) %>
     </div>
     <div class="field">
     <%= f.file_field :image%>
