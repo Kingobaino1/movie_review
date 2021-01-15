@@ -1,3 +1,4 @@
+# rubocop:disable Style/Next, Lint/ParenthesesAsGroupedExpression
 module FollowingsHelper
   def display_followers(user)
     user.followers.each do |follower|
@@ -27,3 +28,5 @@ module FollowingsHelper
     end
   end
 end
+
+# rubocop:enable Style/Next, Lint/ParenthesesAsGroupedExpression

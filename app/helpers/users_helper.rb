@@ -1,3 +1,4 @@
+# rubocop:disable Style/GuardClause
 module UsersHelper
   def cover_image(user)
     if user.cover_image.attached?
@@ -48,3 +49,5 @@ module UsersHelper
     end
   end
 end
+
+# rubocop:enable Style/GuardClause

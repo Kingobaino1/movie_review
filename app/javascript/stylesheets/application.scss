@@ -1,13 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
 @import '@fortawesome/fontawesome-free';
 
-
 $primary-color-dark: #689f38;
 $primary-color: #8bc34a;
 $primary-color-light: #dcedc8;
 $primary-color-text: #212121;
 $divider-color: #bdbdbd;
-
 
 form {
   width: 80%;
@@ -49,6 +47,7 @@ form {
   color: white;
   padding: 0 0 2px 15px;
 }
+
 .d {
   display: flex;
 }
@@ -125,14 +124,6 @@ li {
 
 .m {
   margin-top: 10px;
-}
-
-.error_explanation {
-color: red;
-ul {
-color: red;
-margin: 0 0 30px 0;
-}
 }
 
 .b_image {

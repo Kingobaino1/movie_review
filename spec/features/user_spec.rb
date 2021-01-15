@@ -1,6 +1,7 @@
+# rubocop:disable Metrics/BlockLength
 require 'rails_helper'
 
-RSpec.feature "Users", type: :feature do
+RSpec.feature 'Users', type: :feature do
   before :each do
     @user1 = User.create(full_name: 'John', user_name: 'jon', email: 'john@example.com', password: 'password')
     @user2 = User.create(full_name: 'Odogwu', user_name: 'nwa', email: 'odogwu@example.com', password: 'password')
@@ -58,3 +59,5 @@ RSpec.feature "Users", type: :feature do
     expect(page).to have_content("You are no longer following #{@user3.full_name}")
   end
 end
+
+# rubocop:enable Metrics/BlockLength
