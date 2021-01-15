@@ -7,7 +7,7 @@
   </aside>
   <aside class="col-md-12">
     <section class="reviews">
-      <%= pluralize(@opinions.count, 'New Review') %> 
+      <%= pluralize(@opinions.count, 'Review') %> 
       <div class="card">
         <ol class="list-group list-group-flush p">
           <% @opinions.each do |opinion| %>
@@ -17,11 +17,7 @@
             <%= opinion.title%>
             </div>
             <div>
-            <% if opinion.image.attached? %>
-             <%= image_tag opinion.image, class: 'image' %>
-             <% else %>
-               <%= link_to image_tag('movie.jpg', alt: 'Profile_picture', class: 'image') %>
-            <% end %>
+              <%= movie_image(opinion) %>
             </div>
             <div class="name">
               Genre:<%= opinion.genre %>
@@ -29,9 +25,7 @@
           </div>
           <div class="d f_dir_col review_content p">
           <div class="name">
-           <% if opinion.user != nil%>
             Reviewed by: <%= opinion.user.full_name %>
-            <% end %>
           </div>
           <div class="name">
             Rating:

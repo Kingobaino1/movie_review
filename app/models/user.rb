@@ -14,6 +14,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  validates :full_name, :user_name, presence: true
+  validates :user_name, length: { minimum: 3 }
   validates :photo, :cover_image, content_type: { in: %w[image/jpeg image/png image/png],
                                                   message: 'Must be a valid image format' },
                                   size: { less_than: 6.megabytes,

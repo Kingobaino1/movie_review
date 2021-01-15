@@ -1,10 +1,6 @@
 <div class="col-md-8">
   <div class="">
-    <% if @user.cover_image.attached? %>
-      <%= image_tag @user.cover_image, class: 'b_image w-100' %>
-    <% else %>
-      <%= link_to image_tag('background_image', alt: 'Cover image', class: 'b_image w-100') %>
-    <% end %>
+    <%= cover_image(@user) %>
     <%= render 'user_reviews'%>
   </div>
 </div>

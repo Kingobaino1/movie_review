@@ -1,11 +1,7 @@
 <div class="col-md-4 mt-2">
   <div class="w-50 mx-auto d-flex f_dir_col">
     <div class="mx-auto mt-4">
-      <% if @user.photo.present? %>
-        <%= image_tag @user.photo, class: 'show_image' %>
-      <% else %>
-        <%= link_to image_tag('profile_image', alt: 'Profile_picture', class: 'show_image') %>
-      <% end %>
+     <%= photo_image(@user)%>
     </div>
     <div class="mx-auto">
       <%= @user.full_name %>
