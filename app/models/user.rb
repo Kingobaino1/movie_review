@@ -20,15 +20,6 @@ class User < ApplicationRecord
                                                   message: 'Must be a valid image format' },
                                   size: { less_than: 6.megabytes,
                                           message: 'Should not exceed 5MB' }
-
-  def follow(other_user)
-    user.following.push(other_user)
-  end
-
-  def unfollow(other_user)
-    following.delete(other_user)
-  end
-
   def following?(other_user)
     following.include?(other_user)
   end
