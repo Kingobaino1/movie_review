@@ -30,7 +30,7 @@
 
 ## Live Demo
 
-(https://martinking-app.herokuapp.com/)
+(https://kimovies.herokuapp.com/)
 
 ## Getting Started
 
