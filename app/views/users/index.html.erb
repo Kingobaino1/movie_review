@@ -10,7 +10,8 @@
           <h4 class="p-2"> KI </h4>
         </div>
         <div class="p-2">
-          <%= link_to 'Logout', :destroy_user_session, method: :delete %>
+          <%= link_to 'Logout', :destroy_user_session, method: :delete, class:'color' %>
+          <%= link_to 'Update Account', edit_user_registration_path, class: 'color pl-5' %>
         </div>
       </div>
       <div class="row">
