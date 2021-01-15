@@ -1,7 +1,7 @@
 # rubocop:disable Style/GuardClause
 module UsersHelper
   def cover_image(user)
-    if user.cover_image.attached?
+    if user.cover_image.present?
       image_tag user.cover_image, class: 'b_image w-100'
     else
       image_tag('background_image', alt: 'Cover image', class: 'b_image w-100')
@@ -9,7 +9,7 @@ module UsersHelper
   end
 
   def photo_image(user)
-    if user.photo.attached?
+    if user.photo.present?
       image_tag user.photo, class: 'show_image'
     else
       image_tag('profile_image', alt: 'Profile_picture', class: 'show_image')
@@ -17,7 +17,7 @@ module UsersHelper
   end
 
   def current_user_photo(user)
-    if user.photo.attached?
+    if user.photo.present?
       image_tag user.photo, class: 'p_image m'
     else
       image_tag('profile_image', alt: 'Profile_picture', class: 'p_image m')
@@ -31,7 +31,7 @@ module UsersHelper
   private
 
   def photo(user)
-    if user.photo.attached?
+    if user.photo.present?
       image_tag user.photo, class: 'image_follow'
     else
       image_tag('profile_image', alt: 'Profile_picture', class: 'image_follow')

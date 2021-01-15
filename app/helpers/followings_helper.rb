@@ -21,7 +21,7 @@ module FollowingsHelper
   private
 
   def follower_photo(user)
-    if user.photo.attached?
+    if user.photo.present?
       image_tag user.photo, class: 'image_follow'
     else
       image_tag('profile_image', alt: 'Profile_picture', class: 'image_follow')
