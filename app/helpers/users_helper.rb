@@ -12,7 +12,7 @@ module UsersHelper
     if user.photo.present?
       image_tag(user.photo, class: 'show_image')
     else
-      image_tag('profile_image', alt: 'Profile_picture', class: 'show_image')
+      image_tag('photo', alt: 'Profile_picture', class: 'show_image')
     end
   end
 
@@ -20,7 +20,7 @@ module UsersHelper
     if user.photo.present?
       image_tag(user.photo, class: 'p_image m')
     else
-      image_tag('profile_image', alt: 'Profile_picture', class: 'p_image m')
+      image_tag('photo', alt: 'Profile_picture', class: 'p_image m')
     end
   end
 
@@ -34,7 +34,7 @@ module UsersHelper
     if user.photo.present?
       image_tag(user.photo, class: 'image_follow')
     else
-      image_tag('profile_image', alt: 'Profile_picture', class: 'image_follow')
+      image_tag('photo', alt: 'Profile_picture', class: 'image_follow')
     end
   end
 
