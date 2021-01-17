@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-title pl-3">
+    Review a movie
+  </div>
+  <div class="card-body">
+      <%= form_with(model: @comment, local: true) do |form| %>
+      <div><%= hidden_field_tag :opinion_id, @opinion.id %></div>
+      <%= form.text_area :content, class: 'color', placeholder: 'Add new Comment' %>
+      <%= form.submit 'Comment', class: 'btn btn-secondary' %>
+    <% end %>
+  </div>
+  </div>   

@@ -5,32 +5,30 @@
   </aside>
   <aside class="col-md-12">
     <section class="reviews">
-      <%= pluralize(@user.opinions.count, 'Review') %> 
       <div class="card">
         <ol class="list-group list-group-flush p">
-          <% @user.opinions.each do |opinion| %>
           <li class="list-group-item d">
           <div class="d f_dir_col">
             <div class="name">
-            <%= opinion.title%>
+            <%= @opinion.title%>
             </div>
             <div>
-              <%= movie_image(opinion) %>
+              <%= movie_image(@opinion) %>
             </div>
             <div class="name">
-              Genre:<%= opinion.genre %>
+              Genre:<%= @opinion.genre %>
             </div>
           </div>
           <div class="d f_dir_col review_content p">
           <div class="name">
-            Reviewed by: <%= opinion.user.full_name %>
+            Reviewed by: <%= @opinion.user.full_name %>
           </div>
           <div class="name">
             Rating:
-            <% opinion.rating.to_i.times do  %>
+            <% @opinion.rating.to_i.times do  %>
             <i class="fas fa-star color_gold"></i>
             <% end %>
-            <% opinion.blank_stars.times do %>
+            <% @opinion.blank_stars.times do %>
             <i class="far fa-star"></i>
             <% end %>
           </div>
@@ -38,28 +36,27 @@
             Review:
           </div>
           <div>
-            <%= opinion.content %>
+            <%= @opinion.content %>
           </div>
           <div class="name">
-            Posted <%= time_ago_in_words(opinion.created_at) %> ago.
+            Posted <%= time_ago_in_words(@opinion.created_at) %> ago.
           </div>
           <div class="d-flex f_dir_col mt-3">
           <div class="d-flex s_btw">
-           <%= opinion.comments.first.content%>
-           <div>hhh</div>
            </div>
            </div>
-           <div class="mt-5">
+           <div class="mt-1 w-100">
           <%= form_with(model: @comment, local: true) do |form| %>
+          <div class="field">
           <%= form.text_area :content, class: 'color', placeholder: 'Add new Comment' %>
-          <div class="d-none"><%= form.number_field :opinion_id, value: opinion.id%></div>
+           <%= form.number_field :rating, max: 5, min: 1, placeholder: "Rating(1-5)*", class: 'color' %>
+           </div>
+          <div class="d-none"><%= form.number_field :opinion_id, value: @opinion.id%></div>
           <%= form.submit 'Comment', class: 'btn btn-primary' %>
           <% end %>
-          <%= link_to 'Add Comment', opinion_path(opinion)%>
           </div>
           </div>
           </li>
-          <% end %>
         </ol>
       </div>
     </section>

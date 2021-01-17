@@ -1,0 +1,21 @@
+  <div class="row">
+    <div class="col-md-3 left-part">
+    <div class="sticky d-flex flex-column">
+      <%= render 'user_side'%>
+    </div>
+    </div>
+    <div class="col-md-9 mid-part">
+      <div class="d s_btw">
+        <div class="tweet">
+          <h4 class="p-2"> KI </h4>
+        </div>
+        <div class="p-2">
+          <%= link_to 'Logout', :destroy_user_session, method: :delete, class:'color' %>
+          <%= link_to 'Update Account', edit_user_registration_path, class: 'color pl-5' %>
+        </div>
+      </div>
+      <div class="row">
+      <%= @opinion.content %>
+      </div>
+    </div>
+  </div>

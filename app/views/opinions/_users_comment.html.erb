@@ -1,0 +1,12 @@
+
+<div class="card border-secondary mb-3 w-100">
+  <% @opinion.comments.each do |comment| %>
+  <div class="card-header"><%= comment.created_at %></div>
+  <div class="card-body text-secondary">
+    <ol>
+     <h5 class="card-title"><%= @opinion.user.full_name %></h5>
+    <li class="card-text"><%= comment.content %></li>
+    </ol>
+    <% end %>
+  </div>
+</div>

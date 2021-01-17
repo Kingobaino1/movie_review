@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :opinions, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_one_attached :photo
   has_one_attached :cover_image
   has_many :active_followings, foreign_key: 'follower_id',

@@ -16,6 +16,16 @@ module FollowingsHelper
         )
       end
     end
+
+    def follow_unfollow_button(user)
+      if current_user == user
+        content_tag :div, current_user.user_name, class: 'font-weight-light color'
+      elsif current_user.following?(user) && current_user != user
+        content_tag(:span, button_to('Unfollow', following_path, method: 'delete',
+                                                                 remote: true,
+                                                                 class: 'btn btn-primary'))
+      end
+    end
   end
 
   private
