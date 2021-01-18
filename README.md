@@ -18,6 +18,10 @@
 
 <p align='center'><small>User profile page</small></p><br /><br />
 
+![screenshot](./app/assets/images/comment_image.png)
+
+<p align='center'><small>Add comment page</small></p><br /><br />
+
 ## Built With
 
 - Rails 6.0.3.4
