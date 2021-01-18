@@ -1,15 +1,2 @@
-<% if current_user == @user %>
-  <div class="font-weight-light color">
-    @<%= @current_user.user_name %>
-  </div>
-<% elsif @current_user.following?(@user) && current_user != @user %>
-  <%= button_to('Unfollow', following_path, method: "delete",
-                                            remote: true,
-                                            class: "btn btn-primary") %>
-<% else %>
-  <%= form_with(model: @follows, local: true) do |f| %>
-     <div><%= hidden_field_tag :followed_id, @user.id %></div>
-     <%= f.submit "Follow", class: "btn btn-primary" %>
-  <% end %>
-<%end%>
+<%= follow_form(@user) %>
 

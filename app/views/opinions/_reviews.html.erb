@@ -45,6 +45,10 @@
           <div class="name">
             Posted <%= time_ago_in_words(opinion.created_at) %> ago.
           </div>
+          <div class="mt-5">
+            <%= link_to 'Add Review', opinion_path(opinion), class: 'color' %>
+            <%= link_to 'See All Reviews', opinion_path(opinion), class: 'color ml-3' %>
+          </div>
           </div>
           </li>
           <% end %>

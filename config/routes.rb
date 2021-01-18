@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :opinions, only:[:create, :destroy, :show]
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'users#index'
   resources :users, only: [:show]
   resources :followings, only: [:create, :destroy]

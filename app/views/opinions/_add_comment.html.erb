@@ -45,21 +45,20 @@
           <div class="d-flex s_btw">
            </div>
            </div>
-           <div class="mt-1 w-100">
+          </div>
+          </li>
+        </ol>
+      </div>
+      <div class="ml-3 w-100">
           <%= form_with(model: @comment, local: true) do |form| %>
           <div class="field">
           <%= form.text_area :content, class: 'color', placeholder: 'Add new Comment' %>
            <%= form.number_field :rating, max: 5, min: 1, placeholder: "Rating(1-5)*", class: 'color' %>
            </div>
-          <div class="d-none"><%= form.number_field :opinion_id, value: @opinion.id%></div>
+          <div class="d-none"><%= form.number_field :opinion_id, value: @opinion.id %></div>
           <%= form.submit 'Comment', class: 'btn btn-primary' %>
           <% end %>
           </div>
-          </div>
-          </li>
-        </ol>
-      </div>
     </section>
   </aside>
-  
 </div>

@@ -13,8 +13,7 @@ class OpinionsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = Comment.all
-    @opinion = Opinion.find(params[:id])
+    @opinion = Opinion.includes(:comments).find(params[:id])
   end
 
   private

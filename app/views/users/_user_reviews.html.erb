@@ -43,19 +43,9 @@
           <div class="name">
             Posted <%= time_ago_in_words(opinion.created_at) %> ago.
           </div>
-          <div class="d-flex f_dir_col mt-3">
-          <div class="d-flex s_btw">
-           <%= opinion.comments.first.content%>
-           <div>hhh</div>
-           </div>
-           </div>
-           <div class="mt-5">
-          <%= form_with(model: @comment, local: true) do |form| %>
-          <%= form.text_area :content, class: 'color', placeholder: 'Add new Comment' %>
-          <div class="d-none"><%= form.number_field :opinion_id, value: opinion.id%></div>
-          <%= form.submit 'Comment', class: 'btn btn-primary' %>
-          <% end %>
-          <%= link_to 'Add Comment', opinion_path(opinion)%>
+          <div class="mt-5">
+              <%= link_to 'Add Review', opinion_path(opinion), class: 'color' %>
+              <%= link_to 'See All Reviews', opinion_path(opinion), class: 'color ml-3' %>
           </div>
           </div>
           </li>
@@ -64,5 +54,4 @@
       </div>
     </section>
   </aside>
-  
 </div>

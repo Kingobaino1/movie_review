@@ -1,12 +1,28 @@
-
-<div class="card border-secondary mb-3 w-100">
-  <% @opinion.comments.each do |comment| %>
-  <div class="card-header"><%= comment.created_at %></div>
-  <div class="card-body text-secondary">
-    <ol>
-     <h5 class="card-title"><%= @opinion.user.full_name %></h5>
-    <li class="card-text"><%= comment.content %></li>
-    </ol>
+<div class="card w-100">
+  <h6 class="m-3">User Reviews</h6>
+  <ol class="list-group list-group-flush">
+    <% @opinion.comments.each do |comment| %>
+    <li class="list-group-item d">
+    <div class="d f_dir_col w-100">
+      <div class="name">
+         <div class="d-flex s_btw">
+           <div class="color"><%= comment.user.full_name %></div>
+           <div class="color"><%= comment.created_at.strftime("%Y/%m/%d") %></div>
+        </div>
+      </div>
+      <div class="name p-1">
+        <% comment.rating.to_i.times do  %>
+        <i class="fas fa-star color_gold"></i>
+        <% end %>
+        <% comment.blank_stars.times do %>
+        <i class="far fa-star"></i>
+        <% end %>      
+      </div>
+      <div class="name p-1">
+        <%= comment.content %>
+      </div>
+    </div>
+  </li>
     <% end %>
-  </div>
+    </ol>
 </div>
