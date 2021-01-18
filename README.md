@@ -40,9 +40,14 @@ To get a local copy up and running follow these simple example steps.
 
 You should have [Ruby 2.7.1](https://www.ruby-lang.org/en/documentation/installation/) installed on your machine along with [Rails 6.0.3.4](http://railsinstaller.org/en) and [PostgreSQL](https://www.postgresql.org/download/).
 
-**Note:** You need to create a user(role) after you install PostgreSQL in order to user it on your local machine.
+**Note:** 
+
+- You need to create a user(role) after you install PostgreSQL in order to user it on your local machine.
+- Sign in via Facebook may not work on your local machine because you don't have the access to the APP_ID and APP_SECRET.
 
 ### Setup
+
+Open your terminal, type `git clone https://github.com/Kingobaino1/movie_review` and hit Enter to download this repository.
 
 Instal gems with:
 
