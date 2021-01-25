@@ -1,0 +1,57 @@
+<div class="row">
+  <aside class="col-md-12">
+    <section class="opinions_form">
+    </section>
+  </aside>
+  <aside class="col-md-12">
+    <section class="reviews">
+      <%= pluralize(@user.opinions.count, 'Review') %> 
+      <div class="card">
+        <ol class="list-group list-group-flush p">
+          <% @user.opinions.each do |opinion| %>
+          <li class="list-group-item d">
+          <div class="d f_dir_col">
+            <div class="name">
+            <%= opinion.title%>
+            </div>
+            <div>
+              <%= movie_image(opinion) %>
+            </div>
+            <div class="name">
+              Genre:<%= opinion.genre %>
+            </div>
+          </div>
+          <div class="d f_dir_col review_content p">
+          <div class="name">
+            Reviewed by: <%= opinion.user.full_name %>
+          </div>
+          <div class="name">
+            Rating:
+            <% opinion.rating.to_i.times do  %>
+            <i class="fas fa-star color_gold"></i>
+            <% end %>
+            <% opinion.blank_stars.times do %>
+            <i class="far fa-star"></i>
+            <% end %>
+          </div>
+          <div class="name">
+            Review:
+          </div>
+          <div>
+            <%= opinion.content %>
+          </div>
+          <div class="name">
+            Posted <%= time_ago_in_words(opinion.created_at) %> ago.
+          </div>
+          <div class="mt-5">
+              <%= link_to 'Add Review', opinion_path(opinion), class: 'color' %>
+              <%= link_to 'See All Reviews', opinion_path(opinion), class: 'color ml-3' %>
+          </div>
+          </div>
+          </li>
+          <% end %>
+        </ol>
+      </div>
+    </section>
+  </aside>
+</div>

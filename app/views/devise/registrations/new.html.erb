@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-md-3 left-part h1">
+    <div class="d-flex f_dir_col">
+    <h2 class="color mx-auto">WELCOME TO</h2> 
+    <h4 class="color mx-auto">KI</h4>
+    <h6 class="color mx-auto">MOVIE REVIEW APP</h6>
+    </div>
+  </div>
+  <div class="col-md-9 mid-part login">
+    <div class="d s_btw">
+      <div class="tweet">
+        <h4 class="p-2"> KI </h4>
+      </div>
+      <div class="p-2">
+        <%= link_to 'Log in', user_session_path, class: 'color' %>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+         <div class="field">
+          <%= f.label :full_name %><br />
+          <%= f.text_field :full_name, autofocus: true, autocomplete: "full-name" %>
+        </div>
+      
+         <div class="field">
+          <%= f.label :user_name %><br />
+          <%= f.text_field :user_name, autofocus: true, autocomplete: "user-name" %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :Photo %><br />
+          <%= f.file_field :photo %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :Cover_image %><br />
+          <%= f.file_field :cover_image %>
+        </div>
+      
+        <div class="actions">
+          <%= f.submit "Create Account" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

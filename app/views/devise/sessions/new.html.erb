@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-3 left-part h"></div>
+  <div class="col-md-9 mid-part login">
+    <div class="d s_btw">
+      <div class="tweet">
+        <h4 class="p-2"> KI </h4>
+      </div>
+      <div class="p-2">
+        <%= link_to 'Sign up', new_user_registration_path, class: 'color' %>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+    <%= link_to image_tag('background_image', alt: 'Cover image', class: 'login_image w-100') %>
+    </div>
+   <div class="col-md-6 mt-5"> 
+     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+       <div class="field">
+         <%= f.label :email %><br />
+         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+       </div>
+
+       <div class="field">
+         <%= f.label :password %><br />
+         <%= f.password_field :password, autocomplete: "current-password" %>
+       </div>
+
+       <div class="actions">
+         <%= f.submit "Log in" %>
+       </div>
+     <% end %>
+     <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+     </div>
+   </div>
+  </div>
+</div>
