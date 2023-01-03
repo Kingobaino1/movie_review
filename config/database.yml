@@ -83,3 +83,4 @@ production:
   database: movie_review_production
   username: movie_review
   password: <%= ENV['MOVIE_REVIEW_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
